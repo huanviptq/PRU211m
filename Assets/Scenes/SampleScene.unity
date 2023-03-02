@@ -2227,6 +2227,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 503598841661512523, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: range
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 503598841661512523, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: colliderDistance
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558258485703081616, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7684322
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558258485703081616, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8453417
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558258485703081616, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.43079183
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558258485703081616, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.57732916
+      objectReference: {fileID: 0}
     - target: {fileID: 4502156823541607186, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
       propertyPath: m_RootOrder
       value: 5
