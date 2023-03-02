@@ -36,4 +36,8 @@ public class Health : MonoBehaviour
             GetComponent<PlayerMovement>().enabled = false;
         }
     }
+
+    public int GetHealth(){
+        return health;
+    }
 }
