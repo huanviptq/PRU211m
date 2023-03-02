@@ -21,11 +21,9 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D capsule;
     BoxCollider2D box;
     bool isGrounded = false;
-    bool isAlive;
 
     void Start()
     {
-        isAlive = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         capsule = GetComponent<CapsuleCollider2D>();

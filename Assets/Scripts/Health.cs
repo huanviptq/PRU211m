@@ -6,13 +6,16 @@ public class Health : MonoBehaviour
 {
     [SerializeField] bool isAI;
     [SerializeField] int health = 100;
-
+    Animator animator;
     void Start(){
-
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage){
         health -= damage;
+        if(health > 0 && !isAI){
+            animator.SetTrigger("Hit");
+        }
         StartCoroutine(VisualIndicator(Color.red));
         StartCoroutine(DieDelay());
     }
@@ -27,6 +30,10 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         if(health <= 0 && isAI){
             Destroy(transform.parent.gameObject);
+        }
+        if(health <= 0 && !isAI){
+            animator.SetTrigger("Die");
+            GetComponent<PlayerMovement>().enabled = false;
         }
     }
 }
