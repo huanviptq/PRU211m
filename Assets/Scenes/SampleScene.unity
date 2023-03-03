@@ -1040,6 +1040,8 @@ MonoBehaviour:
   jumpVolume: 0.1
   attackClip: {fileID: 8300000, guid: 61f2b00f5f31a1642a31444415f3d300, type: 3}
   attackVolume: 0.1
+  hitClip: {fileID: 8300000, guid: 8aa5696809b8f90478729b5fc4b1bf9c, type: 3}
+  hitVolume: 0.1
 --- !u!4 &1446034937
 Transform:
   m_ObjectHideFlags: 0
@@ -2751,6 +2753,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 503598841661512523, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: range
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503598841661512523, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
+      propertyPath: colliderDistance
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4502156823541607186, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -7,14 +7,17 @@ public class Health : MonoBehaviour
     [SerializeField] bool isAI;
     [SerializeField] int health = 100;
     Animator animator;
+    AudioPlayer audioPlayer;
     void Start(){
         animator = GetComponent<Animator>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     public void TakeDamage(int damage){
         health -= damage;
         if(health > 0 && !isAI){
             animator.SetTrigger("Hit");
+            audioPlayer.PlayHitClip();
         }
         StartCoroutine(VisualIndicator(Color.red));
         StartCoroutine(DieDelay());

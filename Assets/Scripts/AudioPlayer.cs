@@ -10,7 +10,11 @@ public class AudioPlayer : MonoBehaviour
 
     [Header("Attack")]
     [SerializeField] AudioClip attackClip;
-    [SerializeField] [Range(0f, 1f)] float attackVolume = 1f; 
+    [SerializeField] [Range(0f, 1f)] float attackVolume = 1f;
+
+    [Header("Get Hit")]
+    [SerializeField] AudioClip hitClip;
+    [SerializeField] [Range(0f, 1f)] float hitVolume = 1f;
 
     public void PlayJumpClip(){
         PlayClip(jumpClip, jumpVolume);
@@ -18,6 +22,10 @@ public class AudioPlayer : MonoBehaviour
 
     public void PlayAttackClip(){
         PlayClip(attackClip, attackVolume);
+    }
+
+    public void PlayHitClip(){
+        PlayClip(hitClip, hitVolume);
     }
 
     void PlayClip(AudioClip clip, float volume){
