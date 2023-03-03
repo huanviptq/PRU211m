@@ -286,6 +286,7 @@ MonoBehaviour:
   attackPoint: {fileID: 6295882028610623236}
   attackRange: 1
   attackRate: 2
+  attackDamage: 50
 --- !u!114 &1299895260041862469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,4 +299,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7f66618783bb54aae6101efe2a9ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAI: 0
   health: 100

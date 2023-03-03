@@ -83,9 +83,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FlipSprite(){
-        bool hasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        if(hasHorizontalSpeed){
-            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
+        if(!PauseMenu.isPaused){
+            bool hasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+            if(hasHorizontalSpeed){
+                transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
+            }
         }
     }
 
