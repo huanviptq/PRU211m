@@ -41,14 +41,16 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
+        if(!PauseMenu.isPaused){
+            moveInput = value.Get<Vector2>();
+        }
     }
 
     void OnJump(InputValue value){
         if(!box.IsTouchingLayers(LayerMask.GetMask("Ground"))){
             return;
         }
-        if(value.isPressed){
+        if(value.isPressed && !PauseMenu.isPaused){
             rb.velocity += new Vector2(0f, jumpPower);
             animator.SetBool("isJumping", true);
             audioPlayer.PlayJumpClip();
@@ -56,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnAttack(){
-        if(Time.time >= nextAttackTime && isGrounded){
+        if(Time.time >= nextAttackTime && isGrounded && !PauseMenu.isPaused){
             animator.SetTrigger("Attack");
             audioPlayer.PlayAttackClip();
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, LayerMask.GetMask("Enemy"));
@@ -83,12 +85,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FlipSprite(){
-        if(!PauseMenu.isPaused){
             bool hasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
             if(hasHorizontalSpeed){
                 transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
             }
-        }
     }
 
     void GroundCheck(){
