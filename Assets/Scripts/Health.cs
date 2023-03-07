@@ -41,23 +41,26 @@ public class Health : MonoBehaviour
     }
 
     IEnumerator Invunerable(){
-        float blinkDelay = 0.0836f;
-        for(int i = 0; i < 10; i++){
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-            yield return new WaitForSeconds(blinkDelay);
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-            yield return new WaitForSeconds(blinkDelay);
+        if(!isDead){
+            float blinkDelay = 0.0836f;
+            for(int i = 0; i < 10; i++){
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                yield return new WaitForSeconds(blinkDelay);
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                yield return new WaitForSeconds(blinkDelay);
+            }
+            isVulnerable = true;
         }
-        isVulnerable = true;
     }
 
     IEnumerator DieDelay(){
-        yield return new WaitForSeconds(0.15f);
         if(health <= 0 && isAI){
+            yield return new WaitForSeconds(0.15f);
             Destroy(transform.parent.gameObject);
         }
         if(health <= 0 && !isAI){
             isDead = true;
+            yield return new WaitForSeconds(0.15f);
             animator.SetTrigger("Die");
             GetComponent<PlayerMovement>().enabled = false;
         }
