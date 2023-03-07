@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             audioPlayer.PlayAttackClip();
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, LayerMask.GetMask("Enemy"));
             foreach(Collider2D enemy in hitEnemies){
-                enemy.GetComponent<Health>().TakeDamage(attackDamage);
+                enemy.GetComponent<Health>().EnemyTakeDamage(attackDamage);
             }
             nextAttackTime = Time.time + 1f / attackRate;
         }
