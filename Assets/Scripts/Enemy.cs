@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
     AudioPlayer audioPlayer;
     Animator animator;
     EnemyPatrol enemyPatrol;
-
     Health playerHealth;
 
     void Awake()
@@ -26,7 +25,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         cooldownTimer += Time.deltaTime;
-        if(PlayerInSight()){
+        if(PlayerInSight() && !playerHealth.isDead){
             if(cooldownTimer >= attackCooldown){
                 cooldownTimer = 0;
                 animator.SetTrigger("Attack");
@@ -57,7 +56,7 @@ public class Enemy : MonoBehaviour
 
     void DamagePlayer(){
         if(PlayerInSight()){
-            playerHealth.TakeDamage(damage);
+            playerHealth.PlayerTakeDamage(damage);
         }
     }
 }
