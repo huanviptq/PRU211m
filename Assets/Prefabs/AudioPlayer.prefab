@@ -46,11 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpClip: {fileID: 8300000, guid: 7e254f2e13a6976478182d32df45583f, type: 3}
-  jumpVolume: 0.2
+  jumpVolume: 0.1
   attackClip: {fileID: 8300000, guid: 52a15af68cc56e145bb2e8f8ec8353af, type: 3}
   attackVolume: 0.2
   hitClip: {fileID: 8300000, guid: 8aa5696809b8f90478729b5fc4b1bf9c, type: 3}
   hitVolume: 0.2
+  coinClip: {fileID: 8300000, guid: 0c5cf403e95cb1246ae7c52e7bd2b365, type: 3}
+  coinVolume: 0.2
 --- !u!82 &8701585443386581173
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58,7 +60,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786109583633908245}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4117c7c9062b4fc4b8462eb27349d8f8, type: 3}
