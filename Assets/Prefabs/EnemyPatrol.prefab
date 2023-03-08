@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAI: 1
   health: 100
+  isDead: 0
 --- !u!114 &503598841661512523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26274392b8bc5824db98eb3e792fc8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
+  attackCooldown: 1
   range: 1.35
   colliderDistance: 0.8
   damage: 20

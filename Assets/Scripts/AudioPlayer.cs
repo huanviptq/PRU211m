@@ -6,7 +6,7 @@ public class AudioPlayer : MonoBehaviour
 {
     [Header("Jump")]
     [SerializeField] AudioClip jumpClip;
-    [SerializeField] [Range(0f, 1f)] float jumpVolume = 1f; 
+    [SerializeField] [Range(0f, 1f)] float jumpVolume = 1f;
 
     [Header("Attack")]
     [SerializeField] AudioClip attackClip;
@@ -15,6 +15,10 @@ public class AudioPlayer : MonoBehaviour
     [Header("Get Hit")]
     [SerializeField] AudioClip hitClip;
     [SerializeField] [Range(0f, 1f)] float hitVolume = 1f;
+
+    [Header("Pickup Coin")]
+    [SerializeField] AudioClip coinClip;
+    [SerializeField] [Range(0f, 1f)] float coinVolume = 1f;
 
     public void PlayJumpClip(){
         PlayClip(jumpClip, jumpVolume);
@@ -26,6 +30,10 @@ public class AudioPlayer : MonoBehaviour
 
     public void PlayHitClip(){
         PlayClip(hitClip, hitVolume);
+    }
+    
+    public void PlayCoinClip(){
+        PlayClip(coinClip, coinVolume);
     }
 
     void PlayClip(AudioClip clip, float volume){
