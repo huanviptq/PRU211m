@@ -805,7 +805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8197784, y: 3.9464223, z: -10}
+  m_LocalPosition: {x: -2.836842, y: 3.946897, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1709,11 +1709,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405510479}
   m_CullTransparentMesh: 1
---- !u!95 &1434914246 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5606684170458578885, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
-  m_PrefabInstance: {fileID: 4502156823681598906}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1478067052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,14 +3881,6 @@ PrefabInstance:
     - target: {fileID: 4502156823541607196, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
       propertyPath: m_Name
       value: EnemyPatrol
-      objectReference: {fileID: 0}
-    - target: {fileID: 4502156823541607197, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1434914246}
-    - target: {fileID: 4502156823541607197, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
-      propertyPath: idleDuration
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a1073aeb026ca4bb9c95d72db77386, type: 3}
