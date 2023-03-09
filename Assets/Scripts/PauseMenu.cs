@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
-
     public GameObject pauseMenuUI;
+    LevelManager levelManager;
+    
+    void Start(){
+        levelManager = FindObjectOfType<LevelManager>();
+    }
 
     void Update()
     {
@@ -33,8 +37,8 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
-    public void LoadMenu(){
-        SceneManager.LoadScene("Main Menu");
+    public void BackToMenu(){
+        levelManager.LoadMenu();
         Resume();
     }
 }

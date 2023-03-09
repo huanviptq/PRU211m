@@ -6,14 +6,19 @@ public class Health : MonoBehaviour
 {
     [SerializeField] bool isAI;
     [SerializeField] int health = 100;
+    [SerializeField] int score = 50;
     Animator animator;
     AudioPlayer audioPlayer;
     bool isVulnerable = true;
     [HideInInspector] public bool isDead = false;
+    ScoreKeeper scoreKeeper;
+    LevelManager levelManager;
 
     void Start(){
         animator = GetComponent<Animator>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        scoreKeeper = FindAnyObjectByType<ScoreKeeper>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     public void PlayerTakeDamage(int damage){
@@ -57,12 +62,14 @@ public class Health : MonoBehaviour
         if(health <= 0 && isAI){
             yield return new WaitForSeconds(0.15f);
             Destroy(transform.parent.gameObject);
+            scoreKeeper.ModifyScore(score);
         }
         if(health <= 0 && !isAI){
             isDead = true;
             yield return new WaitForSeconds(0.15f);
             animator.SetTrigger("Die");
             GetComponent<PlayerMovement>().enabled = false;
+            levelManager.LoadGameOver();
         }
     }
 
