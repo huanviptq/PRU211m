@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z)
         , 0, Vector2.left, 0, LayerMask.GetMask("Player"));
         if(hit.collider != null){
-            playerHealth = hit.transform.GetComponent<Health>();
+            playerHealth = hit.transform.GetComponentInChildren<Health>();
         }
         return hit.collider != null;
     }
