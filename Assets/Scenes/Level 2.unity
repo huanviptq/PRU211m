@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 197790328}
-  playerHealth: {fileID: 1862631348}
+  playerHealth: {fileID: 5634512572995896993}
   scoreText: {fileID: 1112899876}
 --- !u!1 &518043913
 GameObject:
@@ -4626,17 +4626,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825274176}
   m_CullTransparentMesh: 1
---- !u!114 &1862631348 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1299895260041862469, guid: b55cfdf893eadb04eb1f95d4d4db4cbc, type: 3}
-  m_PrefabInstance: {fileID: 5634512572995896991}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac7f66618783bb54aae6101efe2a9ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1985366906
 GameObject:
   m_ObjectHideFlags: 0
@@ -4768,6 +4757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 786109583633908250, guid: 0ea07724b3175764ebe6833c8dd063ff, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5634512572995896992}
     - target: {fileID: 786109583633908251, guid: 0ea07724b3175764ebe6833c8dd063ff, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4928,6 +4921,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b55cfdf893eadb04eb1f95d4d4db4cbc, type: 3}
+--- !u!1 &5634512572995896992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5634512573242514672, guid: b55cfdf893eadb04eb1f95d4d4db4cbc, type: 3}
+  m_PrefabInstance: {fileID: 5634512572995896991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5634512572995896993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1664913279708465710, guid: b55cfdf893eadb04eb1f95d4d4db4cbc, type: 3}
+  m_PrefabInstance: {fileID: 5634512572995896991}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634512572995896992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7f66618783bb54aae6101efe2a9ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6348350406018166684
 PrefabInstance:
   m_ObjectHideFlags: 0
