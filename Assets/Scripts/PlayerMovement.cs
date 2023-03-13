@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] float attackRate = 2f;
     [SerializeField] int attackDamage = 50;
+    [SerializeField] int hazardDamage = 20;
     float nextAttackTime = 0f;
     AudioPlayer audioPlayer;
     const float groundCheckRadius = 0.2f;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         animator.SetFloat("yVelocity", rb.velocity.y);
         GroundCheck();
+        DieByHazard();
     }
 
     void OnMove(InputValue value)
@@ -58,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnAttack(){
-        if(Time.time >= nextAttackTime && isGrounded && !PauseMenu.isPaused){
+        if(Time.time >= nextAttackTime && !PauseMenu.isPaused){
             animator.SetTrigger("Attack");
             audioPlayer.PlayAttackClip();
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, LayerMask.GetMask("Enemy"));
@@ -98,5 +100,11 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
         }
         animator.SetBool("isJumping", !isGrounded);
+    }
+
+    void DieByHazard(){
+        if(capsule.IsTouchingLayers(LayerMask.GetMask("Hazards"))){
+            capsule.GetComponent<Health>().PlayerTakeDamage(hazardDamage);
+        }
     }
 }

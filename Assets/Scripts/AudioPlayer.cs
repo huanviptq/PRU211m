@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
+    [Header("Player")]
+    [SerializeField] GameObject player;
+
     [Header("Jump")]
     [SerializeField] AudioClip jumpClip;
     [SerializeField] [Range(0f, 1f)] float jumpVolume = 1f;
@@ -19,6 +22,10 @@ public class AudioPlayer : MonoBehaviour
     [Header("Pickup Coin")]
     [SerializeField] AudioClip coinClip;
     [SerializeField] [Range(0f, 1f)] float coinVolume = 1f;
+
+    void Start(){
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     public void PlayJumpClip(){
         PlayClip(jumpClip, jumpVolume);
@@ -38,8 +45,8 @@ public class AudioPlayer : MonoBehaviour
 
     void PlayClip(AudioClip clip, float volume){
         if(clip != null){
-            Vector3 cameraPos = Camera.main.transform.position;
-            AudioSource.PlayClipAtPoint(clip, cameraPos, volume);
+            Vector3 playerPos = player.transform.position;
+            AudioSource.PlayClipAtPoint(clip, playerPos, volume);
         }
     }
 }
