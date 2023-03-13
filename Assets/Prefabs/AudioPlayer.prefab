@@ -45,14 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6270c918c54148049bb5cfaa37dd4eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   jumpClip: {fileID: 8300000, guid: 7e254f2e13a6976478182d32df45583f, type: 3}
-  jumpVolume: 0.1
+  jumpVolume: 1
   attackClip: {fileID: 8300000, guid: 52a15af68cc56e145bb2e8f8ec8353af, type: 3}
-  attackVolume: 0.2
+  attackVolume: 1
   hitClip: {fileID: 8300000, guid: 8aa5696809b8f90478729b5fc4b1bf9c, type: 3}
-  hitVolume: 0.2
+  hitVolume: 1
   coinClip: {fileID: 8300000, guid: 0c5cf403e95cb1246ae7c52e7bd2b365, type: 3}
-  coinVolume: 0.2
+  coinVolume: 1
 --- !u!82 &8701585443386581173
 AudioSource:
   m_ObjectHideFlags: 0
