@@ -17,7 +17,7 @@ TagManager:
   - Enemy
   - Interactables
   - Hazards
-  - 
+  - Hearts
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Interactables
     uniqueID: 1538164359
+    locked: 0
+  - name: Hearts
+    uniqueID: 3012006949
     locked: 0
   - name: Hazards
     uniqueID: 358906131

@@ -23,6 +23,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip coinClip;
     [SerializeField] [Range(0f, 1f)] float coinVolume = 1f;
 
+    [Header("Pickup Heart")]
+    [SerializeField] AudioClip healClip;
+    [SerializeField] [Range(0f, 1f)] float healVolume = 1f;
+
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -41,6 +45,10 @@ public class AudioPlayer : MonoBehaviour
     
     public void PlayCoinClip(){
         PlayClip(coinClip, coinVolume);
+    }
+
+    public void PlayHealClip(){
+        PlayClip(healClip, healVolume);
     }
 
     void PlayClip(AudioClip clip, float volume){

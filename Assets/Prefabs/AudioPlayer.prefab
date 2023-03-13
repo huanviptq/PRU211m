@@ -54,6 +54,8 @@ MonoBehaviour:
   hitVolume: 1
   coinClip: {fileID: 8300000, guid: 0c5cf403e95cb1246ae7c52e7bd2b365, type: 3}
   coinVolume: 1
+  healClip: {fileID: 8300000, guid: 0c5cf403e95cb1246ae7c52e7bd2b365, type: 3}
+  healVolume: 1
 --- !u!82 &8701585443386581173
 AudioSource:
   m_ObjectHideFlags: 0
