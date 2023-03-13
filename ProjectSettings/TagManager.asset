@@ -50,11 +50,11 @@ TagManager:
   - name: Platforms
     uniqueID: 768636189
     locked: 0
-  - name: Hazards
-    uniqueID: 358906131
-    locked: 0
   - name: Interactables
     uniqueID: 1538164359
+    locked: 0
+  - name: Hazards
+    uniqueID: 358906131
     locked: 0
   - name: Enemy
     uniqueID: 1960736827
