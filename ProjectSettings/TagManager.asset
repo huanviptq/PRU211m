@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Interactables
   - Hazards
   - Hearts
-  - 
+  - Slashes
   - 
   - 
   - 
@@ -58,6 +59,9 @@ TagManager:
     locked: 0
   - name: Hazards
     uniqueID: 358906131
+    locked: 0
+  - name: Slashes
+    uniqueID: 2374821143
     locked: 0
   - name: Enemy
     uniqueID: 1960736827

@@ -1245,6 +1245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPatrol 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3820239654220798869, guid: 5acc1622f7826be42b7832f53aeb1be9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3820239654220798875, guid: 5acc1622f7826be42b7832f53aeb1be9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -106882,6 +106886,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 219606447759051138, guid: b55cfdf893eadb04eb1f95d4d4db4cbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.02
+      objectReference: {fileID: 0}
     - target: {fileID: 5634512573242514669, guid: b55cfdf893eadb04eb1f95d4d4db4cbc, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float attackRate = 2f;
     [SerializeField] int attackDamage = 50;
     [SerializeField] int hazardDamage = 20;
+    [SerializeField] GameObject slash;
+    [SerializeField] Transform slashPoint;
     float nextAttackTime = 0f;
     AudioPlayer audioPlayer;
     const float groundCheckRadius = 0.2f;
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     void OnAttack(){
         if(Time.time >= nextAttackTime && !PauseMenu.isPaused){
             animator.SetTrigger("Attack");
+            StartCoroutine(SlashDelay());
             audioPlayer.PlayAttackClip();
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, LayerMask.GetMask("Enemy"));
             foreach(Collider2D enemy in hitEnemies){
@@ -90,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
             bool hasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
             if(hasHorizontalSpeed){
                 transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
+                slash.transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
             }
     }
 
@@ -112,5 +116,10 @@ public class PlayerMovement : MonoBehaviour
         if(capsule.IsTouchingLayers(LayerMask.GetMask("Water"))){
             audioPlayer.PlaySplashClip();
         }
+    }
+
+    IEnumerator SlashDelay(){
+        yield return new WaitForSeconds(0.15f);
+        Instantiate(slash, slashPoint.position, Quaternion.identity);
     }
 }
