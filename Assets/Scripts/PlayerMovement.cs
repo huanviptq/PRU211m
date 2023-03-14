@@ -107,4 +107,10 @@ public class PlayerMovement : MonoBehaviour
             capsule.GetComponent<Health>().PlayerTakeDamage(hazardDamage);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if(capsule.IsTouchingLayers(LayerMask.GetMask("Water"))){
+            audioPlayer.PlaySplashClip();
+        }
+    }
 }
