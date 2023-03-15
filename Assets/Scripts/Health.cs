@@ -14,12 +14,15 @@ public class Health : MonoBehaviour
     ScoreKeeper scoreKeeper;
     LevelManager levelManager;
     static int MAX_HEALTH = 100;
-
+    [SerializeField] GameObject heart;
+    [SerializeField] Transform dropPoint;
+    int dropChance;
     void Start(){
         animator = GetComponent<Animator>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindAnyObjectByType<ScoreKeeper>();
         levelManager = FindObjectOfType<LevelManager>();
+        dropChance = Random.Range(1, 101);
     }
 
     public void PlayerTakeDamage(int damage){
@@ -62,6 +65,9 @@ public class Health : MonoBehaviour
     IEnumerator DieDelay(){
         if(health <= 0 && isAI){
             yield return new WaitForSeconds(0.15f);
+            if(dropChance >= 80){
+                Instantiate(heart, dropPoint.transform.position, Quaternion.identity);
+            }
             Destroy(transform.parent.gameObject);
             scoreKeeper.ModifyScore(score);
         }

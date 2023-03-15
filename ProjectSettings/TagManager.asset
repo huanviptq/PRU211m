@@ -54,14 +54,14 @@ TagManager:
   - name: Interactables
     uniqueID: 1538164359
     locked: 0
-  - name: Hearts
-    uniqueID: 3012006949
-    locked: 0
   - name: Hazards
     uniqueID: 358906131
     locked: 0
   - name: Slashes
     uniqueID: 2374821143
+    locked: 0
+  - name: Hearts
+    uniqueID: 3012006949
     locked: 0
   - name: Enemy
     uniqueID: 1960736827
