@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [HideInInspector] public bool isDead = false;
     ScoreKeeper scoreKeeper;
     LevelManager levelManager;
+    static int MAX_HEALTH = 100;
 
     void Start(){
         animator = GetComponent<Animator>();
@@ -70,6 +71,15 @@ public class Health : MonoBehaviour
             animator.SetTrigger("Die");
             GetComponent<PlayerMovement>().enabled = false;
             levelManager.LoadGameOver();
+        }
+    }
+
+    public void Heal(int value){
+        if(health >= MAX_HEALTH){
+            this.health = MAX_HEALTH;
+        }
+        else{
+            health += value;
         }
     }
 
