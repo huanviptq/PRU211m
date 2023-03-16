@@ -17,6 +17,10 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject heart;
     [SerializeField] Transform dropPoint;
     int dropChance;
+    [SerializeField] bool isBoss;
+    [SerializeField] GameObject exitPortal;
+    [SerializeField] Transform exitDropPoint;
+
     void Start(){
         animator = GetComponent<Animator>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
@@ -65,8 +69,11 @@ public class Health : MonoBehaviour
     IEnumerator DieDelay(){
         if(health <= 0 && isAI){
             yield return new WaitForSeconds(0.15f);
-            if(dropChance >= 80){
+            if(dropChance >= 80 && !isBoss){
                 Instantiate(heart, dropPoint.transform.position, Quaternion.identity);
+            }
+            if(isBoss){
+                Instantiate(exitPortal, exitDropPoint.transform.position, Quaternion.identity);
             }
             Destroy(transform.parent.gameObject);
             scoreKeeper.ModifyScore(score);

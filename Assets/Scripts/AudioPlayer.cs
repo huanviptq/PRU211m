@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioPlayer : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class AudioPlayer : MonoBehaviour
     [Header("Water Splash")]
     [SerializeField] AudioClip waterClip;
     [SerializeField] [Range(0f, 1f)] float waterVolume = 1f;
+
+    static AudioPlayer instance;
 
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
