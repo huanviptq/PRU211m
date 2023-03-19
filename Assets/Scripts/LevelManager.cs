@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     ScoreKeeper scoreKeeper;
-    [SerializeField] float loadLevelDelay = 0f;
     [SerializeField] float loadGameOverDelay = 2f;
 
     void Start(){
@@ -24,18 +23,22 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextLevel(){
         if(SceneManager.GetActiveScene().name == "Level 1"){
-            StartCoroutine(WaitAndLoad("Level 2", loadLevelDelay));
+            SceneManager.LoadScene("Level 2");
         }
         if(SceneManager.GetActiveScene().name == "Level 2"){
-            StartCoroutine(WaitAndLoad("Level 3", loadLevelDelay));
+            SceneManager.LoadScene("Level 2");
         }
         if(SceneManager.GetActiveScene().name == "Level 3"){
-            LoadGameOver();
+            LoadVictory();
         }
     }
 
     public void LoadGameOver(){
         StartCoroutine(WaitAndLoad("Game Over", loadGameOverDelay));
+    }
+
+    public void LoadVictory(){
+        SceneManager.LoadScene("Victory");
     }
 
     public void QuitGame(){
