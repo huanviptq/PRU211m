@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     ScoreKeeper scoreKeeper;
     [SerializeField] float loadGameOverDelay = 2f;
+    [SerializeField] float loadVictoryDelay = 1f;
 
     void Start(){
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
@@ -26,7 +27,7 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("Level 2");
         }
         if(SceneManager.GetActiveScene().name == "Level 2"){
-            SceneManager.LoadScene("Level 2");
+            SceneManager.LoadScene("Level 3");
         }
         if(SceneManager.GetActiveScene().name == "Level 3"){
             LoadVictory();
@@ -38,7 +39,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadVictory(){
-        SceneManager.LoadScene("Victory");
+        StartCoroutine(WaitAndLoad("Victory", loadVictoryDelay));
     }
 
     public void QuitGame(){
