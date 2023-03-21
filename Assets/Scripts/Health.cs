@@ -127,15 +127,15 @@ public class Health : MonoBehaviour
             if(isBoss){
                 Instantiate(exitPortal, exitDropPoint.transform.position, Quaternion.identity);
             }
-            Destroy(transform.parent.gameObject); // Xoa game object
-            scoreKeeper.ModifyScore(score);         // Tang diem
+            Destroy(transform.parent.gameObject);
+            scoreKeeper.ModifyScore(score);     
         }
         if(health <= 0 && !isAI){
             isDead = true;
             yield return new WaitForSeconds(0.15f);
             animator.SetTrigger("Die");
-            GetComponent<PlayerMovement>().enabled = false; // Khong cho di chuyen
-            levelManager.LoadGameOver();  // load man gameover
+            GetComponent<PlayerMovement>().enabled = false;
+            levelManager.LoadGameOver(); 
         }
     }
 
