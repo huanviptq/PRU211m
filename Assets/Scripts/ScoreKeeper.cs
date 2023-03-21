@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    static ScoreKeeper instance;    // Bien giu diem
-    int score;                      // Diem hien tai
+    static ScoreKeeper instance; 
+    int score;
 
     void Awake(){
         ManageSingleton();
