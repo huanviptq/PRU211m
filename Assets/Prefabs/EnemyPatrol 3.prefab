@@ -170,7 +170,7 @@ MonoBehaviour:
   attackCooldown: 0.5
   range: 3.39
   colliderDistance: 0.51
-  damage: 20
+  damage: 40
   boxCollider: {fileID: 2953845647272873497}
 --- !u!1 &3820239654220798869
 GameObject:
